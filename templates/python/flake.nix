@@ -29,10 +29,12 @@
                 dotenv.disableHint = true;
 
                 packages = [ 
-                  pkgs.nodejs_18 
+                  pkgs.nodejs_18
+                  pkgs.stdenv
                 ];
 
                 enterShell = ''
+                  export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib";
                 '';
 
                 languages = {
