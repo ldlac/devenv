@@ -209,6 +209,18 @@
               ```
             '';
           };
+
+          python = {
+            path = ./templates/python;
+            description = "A Python Nix flake with devenv integration.";
+            welcomeText = ''
+              # `.devenv` should be added to `.gitignore`
+              ```sh
+                echo .devenv >> .gitignore
+              ```
+            '';
+          };
+          
           default = simple;
         };
 
